@@ -58,7 +58,7 @@
 
 % v1.7.2 Add simpleicons to provide X icon
 % v1.7.3 But first check if the package files exist
-\IfFileExists{simpleiconsglyphs-pdftex.tex}{\RequirePackage{simpleicons}}{}
+%\IfFileExists{simpleiconsglyphs-pdftex.tex}{\RequirePackage{simpleicons}}{}
 
 % v1.7.3 Use iftex for easier access to \iftutex
 \RequirePackage{iftex}
