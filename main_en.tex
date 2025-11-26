@@ -1,284 +1,147 @@
-%%%%%%%%%%%%%%%%%
-% This is an sample CV template created using altacv.cls
-% (v1.7.2, 28 August 2024) written by LianTze Lim (liantze@gmail.com). Compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
-%
-%% It may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 1.3
-%% of this license or (at your option) any later version.
-%% The latest version of this license is in
-%%    http://www.latex-project.org/lppl.txt
-%% and version 1.3 or later is part of all distributions of LaTeX
-%% version 2003/12/01 or later.
-%%%%%%%%%%%%%%%%
+\documentclass[10pt,a4paper]{article}
 
-%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
-% \documentclass[10pt,a4paper,normalphoto]{altacv}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{iftex}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{fontawesome5}
 
-\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
-%% AltaCV uses the fontawesome5 and simpleicons packages.
-%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/simpleicons for full list of symbols.
-
-% Change the page layout if you need to
-\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1.5cm,columnsep=1.2cm}
-
-% The paracol package lets you typeset columns of text in parallel
-\usepackage{paracol}
-
-% Change the font if you want to, depending on whether
-% you're using pdflatex or xelatex/lualatex
-% WHEN COMPILING WITH XELATEX PLEASE USE
-% xelatex -shell-escape -output-driver="xdvipdfmx -z 0" main_en.tex
-\iftutex
-  % If using xelatex or lualatex: use system fonts
-  \setmainfont{DejaVu Serif}
-  \setsansfont{DejaVu Sans}
-  \renewcommand{\familydefault}{\sfdefault}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
 \else
-  % If using pdflatex:
-  \usepackage[rm]{roboto}
-  \usepackage[defaultsans]{lato}
-  % \usepackage{sourcesanspro}
+  \usepackage{fontspec}
+  \setmainfont{Noto Sans CJK JP}
+  \setsansfont{Noto Serif CJK JP}
   \renewcommand{\familydefault}{\sfdefault}
 \fi
 
-% Change the colours if you want to
-\definecolor{SlateGrey}{HTML}{2E2E2E}
-\definecolor{LightGrey}{HTML}{666666}
-\definecolor{DarkPastelRed}{HTML}{450808}
-\definecolor{PastelRed}{HTML}{8F0D0D}
-\definecolor{GoldenEarth}{HTML}{E7D192}
-\definecolor{MutedNavy}{HTML}{233447}
-\colorlet{name}{black}
-\colorlet{tagline}{PastelRed}
-\colorlet{heading}{DarkPastelRed}
-\colorlet{headingrule}{GoldenEarth}
-\colorlet{subheading}{PastelRed}
-\colorlet{accent}{PastelRed}
-\colorlet{emphasis}{MutedNavy}
-\colorlet{body}{LightGrey}
+\definecolor{DarkInk}{HTML}{1F2937}
+\definecolor{SteelGrey}{HTML}{4B5563}
+\definecolor{LineGrey}{HTML}{D1D5DB}
 
-% Change some fonts, if necessary
-\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
-\renewcommand{\personalinfofont}{\footnotesize}
-\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
-\renewcommand{\cvsubsectionfont}{\large\bfseries}
-
-
-% Change the bullets for itemize and rating marker
-% for \cvskill if you want to
-\renewcommand{\cvItemMarker}{{\small\textbullet}}
-\renewcommand{\cvRatingMarker}{\faCircle}
-% ...and the markers for the date/location for \cvevent
-% \renewcommand{\cvDateMarker}{\faCalendar*[regular]}
-% \renewcommand{\cvLocationMarker}{\faMapMarker*}
-
-
-% If your CV/résumé is in a language other than English,
-% then you probably want to change these so that when you
-% copy-paste from the PDF or run pdftotext, the location
-% and date marker icons for \cvevent will paste as correct
-% translations. For example Spanish:
-% \renewcommand{\locationname}{Ubicación}
-% \renewcommand{\datename}{Fecha}
-
-
-%% Use (and optionally edit if necessary) this .tex if you
-%% want to use an author-year reference style like APA(6)
-%% for your publication list
-% \input{pubs-authoryear.tex}
-
-%% Use (and optionally edit if necessary) this .tex if you
-%% want an originally numerical reference style like IEEE
-%% for your publication list
-\input{pubs-num.tex}
-
-%% sample.bib contains your publications
-\addbibresource{sample.bib}
-% \usepackage{academicons}\let\faOrcid\aiOrcid
-\begin{document}
-\name{WANG Yizhen}
-\tagline{Master, Hasegawa Lab, The University of Tokyo}
-%% You can add multiple photos on the left or right
-\photoR{3.0cm}{1.jpg}
-% \photoL{2.5cm}{Yacht_High,Suitcase_High}
-
-\personalinfo{%
-  % Not all of these are required!
-  \email{wangyz@iis.u-tokyo.ac.jp}
-  \phone{080-8008-2338}
-  \location{Tokyo, Japan}\\
-  \homepage{blog.wang1zhen.com}
-  \github{wang1zhen}
-  \printinfo{\faLinkedin}{wang1zhen}[https://www.linkedin.com/in/\%E4\%B8\%80\%E8\%87\%BB-yizhen-\%E3\%82\%A4\%E3\%82\%B7\%E3\%83\%B3-\%E7\%8E\%8B-wang-\%E3\%82\%AA\%E3\%82\%A6-3a7b68110/]
-  %% You can add your own arbitrary detail with
-  %% \printinfo{symbol}{detail}[optional hyperlink prefix]
-  % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
-
-  %% Or you can declare your own field with
-  %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
-  % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
-  % \gitlab{your_id}
-  %%
-  %% For services and platforms like Mastodon where there isn't a
-  %% straightforward relation between the user ID/nickname and the hyperlink,
-  %% you can use \printinfo directly e.g.
-  % \printinfo{\faMastodon}{@username@instace}[https://instance.url/@username]
-  %% But if you absolutely want to create new dedicated info fields for
-  %% such platforms, then use \NewInfoField* with a star:
-  % \NewInfoField*{mastodon}{\faMastodon}
-  %% then you can use \mastodon, with TWO arguments where the 2nd argument is
-  %% the full hyperlink.
-  % \mastodon{@username@instance}{https://instance.url/@username}
+\newcommand{\sectionrule}{\textcolor{LineGrey}{\rule{\linewidth}{0.6pt}}}
+\newcommand{\cvsection}[1]{%
+  \vspace{5pt}%
+  {\Large\scshape #1}\par\vspace{-2pt}%
+  \sectionrule\vspace{2pt}%
+}
+\newcommand{\contactitem}[2]{\textcolor{SteelGrey}{#1}\,#2}
+\newcommand{\furiname}[4]{%
+  \begin{tabular}[t]{@{}cc@{}}%
+    {\large #1} & {\large #2}\\[-1pt]%
+    {\Huge\bfseries #3} & {\Huge\bfseries #4}%
+  \end{tabular}%
+}
+\newenvironment{cvitems}{\begin{itemize}[leftmargin=*,itemsep=4pt,topsep=2pt]}{\end{itemize}}
+\newcommand{\eduentry}[5]{%
+  \vspace{8pt}%
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r}
+    \textbf{#1} & #4\\
+    \textit{\small #2} & \textit{\small #3}\\
+  \end{tabular*}%
+  \if\relax\detokenize{#5}\relax
+    \vspace{4pt}%
+  \else
+    \vspace{-2pt}%
+    \begin{cvitems}
+      #5
+    \end{cvitems}
+  \fi
 }
 
-\makecvheader
-%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
-% \AtBeginEnvironment{itemize}{\small}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[itemize]{leftmargin=*,itemsep=4pt,topsep=2pt,label={$\circ$}}
 
-%% Set the left/right column width ratio to 6:4.
-\columnratio{0.6}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=DarkInk,
+  urlcolor=DarkInk
+}
 
-% Start a 2-column paracol. Both the left and right columns will automatically
-% break across pages if things get too long.
-\begin{paracol}{2}
+\begin{document}
+\thispagestyle{empty}
+
+\begin{minipage}[b]{0.72\linewidth}
+  \furiname{オウ}{イシン}{王}{一臻}\\[4pt]
+  {\normalsize WANG\;Yizhen}
+
+  \vspace{8pt}
+  {\footnotesize
+    \textcolor{DarkInk}{\normalsize Master, Hasegawa Lab, The University of Tokyo}\\[-2pt]
+    \contactitem{\faEnvelope[regular]}{\href{mailto:wangyz@iis.u-tokyo.ac.jp}{wangyz@iis.u-tokyo.ac.jp}}\hspace{1em}
+    \contactitem{\faPhone}{080-8008-2338}\hspace{1em}
+    \contactitem{\faMapMarker*}{Tokyo, Japan}\\[2pt]
+    \contactitem{\faGlobe}{\href{https://blog.wang1zhen.com}{blog.wang1zhen.com}}\hspace{1em}
+    \contactitem{\faGithub}{\href{https://github.com/wang1zhen}{github.com/wang1zhen}}\hspace{1em}
+    \contactitem{\faLinkedin}{\href{https://www.linkedin.com/in/\%E4\%B8\%80\%E8\%87\%BB-yizhen-\%E3\%82\%A4\%E3\%82\%B7\%E3\%83\%B3-\%E7\%8E\%8B-wang-\%E3\%82\%AA\%E3\%82\%A6-3a7b68110/}{LinkedIn}}
+  }
+\end{minipage}
+\hfill
+\begin{minipage}[b]{0.22\linewidth}
+  \raggedleft
+  \raisebox{6pt}{\includegraphics[width=2.8cm]{1.jpg}}
+\end{minipage}
+
 \cvsection{Education}
 
-\cvevent{High School}{Shanghai Experimental School}{2011.9 -- 2014.8}{Shanghai, China}
+\eduentry
+  {The University of Tokyo}
+  {Master, Mechanical Engineering, Hasegawa Lab}
+  {Tokyo, Japan}
+  {Oct 2023 -- Sep 2025}
+  {\item Automated optimization of pulsating waveforms for drag reduction in turbulent pipe flow experiments}
 
-\divider
+\eduentry
+  {University of Melbourne}
+  {Master, Mechanical Engineering (Withdrawn)}
+  {Melbourne, Australia}
+  {Jan 2019 -- Dec 2019}
+  {\item Energy transport in high-Reynolds-number turbulent boundary layers over rough walls}
 
-\cvevent{Bachelor's Degree}{Shanghai Jiao Tong University}{2014.9 -- 2018.9}{Shanghai, China}
-\begin{itemize}
-\item School of Mechanical Engineering, Major in Energy and Power Engineering
-\item School of Humanities, Minor in Music
-\end{itemize}
-{\small\color{emphasis}{$\triangleright$ The dilution effect of DME and ethanol on methane flames\\$\triangleright$ Dynamic characteristics of a hydrogen-cooling generator stator base}}
+\eduentry
+  {Shanghai Jiao Tong University}
+  {Bachelor, Energy and Power Engineering; Minor in Musicology}
+  {Shanghai, China}
+  {Sep 2014 -- Sep 2018}
+  {\item Dilution effects of DME and ethanol on methane flames
+   \item Dynamic characteristics of hydrogen-cooled generator stator foundations}
 
-\divider
-
-\cvevent{Master's Degree (Withdrawn)}{The University of Melbourne}{2019.1 -- 2019.12}{Melbourne, Australia}
-\begin{itemize}
-\item Major in Mechanical Engineering
-\end{itemize}
-{\small\color{emphasis}{$\triangleright$ Energetic motions in rough-wall high-Reynolds-number turbulent boundary layers}}
-
-\divider
-
-\cvevent{Master's Degree}{The University of Tokyo}{2023.10 -- 2025.9}{Tokyo, Japan}
-\begin{itemize}
-\item Major in Mechanical Engineering
-\end{itemize}
-{\small\color{emphasis}{$\triangleright$ Automated pulsation-waveform optimization for drag reduction in pipe-flow turbulence experiments}}
+\eduentry
+  {Shanghai Experimental School}
+  {High School}
+  {Shanghai, China}
+  {Sep 2011 -- Aug 2014}
+  {}
 
 \cvsection{Skills}
-
-{\Large\color{accent}{Programming}}
-
-{\large\color{emphasis}\cvtag{Python} \cvtag{MATLAB} \cvtag{C\&C++} \cvtag{E-LISP}}
-
-\divider
-
-{\Large\color{accent}{3D Modeling \& Simulation}}
-
-{\large\color{emphasis}\cvtag{SolidWorks} \cvtag{OpenFOAM} \cvtag{ANSYS}}
-
-\divider
-
-{\Large\color{accent}{Office Software}}
-
-{\large\color{emphasis}\cvtag{Microsoft Office} \cvtag{\LaTeX}}
-
-\divider
-
-{\Large\color{accent}{Others}}
-
-{\large\color{emphasis}\cvtag{Linux} \cvtag{openWRT} \cvtag{BSD} \cvtag{NAS}}
-
-% use ONLY \newpage if you want to force a page break for
-% ONLY the current column
-%\newpage
-
-%% Switch to the right column. This will now automatically move to the second
-%% page if the content is too long.
-\switchcolumn
-
-\cvsection{Life Philosophy}
-
-
-\begin{quote}
-\LARGE{Climb}
-\end{quote}
-
-\bigskip
-
-% \cvsection{Strengths}
-
-% % Don't overuse these \cvtag boxes — they're just eye-candies and not essential. If something doesn't fit on a single line, it probably works better as part of an itemized list (probably inlined itemized list), or just as a comma-separated list of strengths.
-
-% % The `ragged2e` document class option might cause automatic linebreaks between \cvtag to fail.
-% % Either remove the ragged2e option; or
-% % add \LaTeXraggedright in the paragraph for these \cvtag
-% {\LaTeXraggedright
-% \cvtag{Persistent}
-% \cvtag{Systems Thinking}
-% \cvtag{Team Spirit}
-% \par}
-
-% \divider
-
-% \smallskip
-
-% %% ...Or manually add linebreaks yourself
-% \cvtag{Python}
-% \cvtag{C \& C++}
-% \cvtag{\LaTeX}\\
-% \cvtag{Emacs-Lisp}
-
-% %% Yeah I didn't spend too much time making all the
-% %% spacing consistent... sorry. Use \smallskip, \medskip,
-% %% \bigskip, \vspace etc to make adjustments.
-% \bigskip
+\begin{cvitems}
+  \item \textbf{Programming}\\
+        Python, MATLAB, C/C++, Emacs Lisp
+  \item \textbf{3D Modeling \& Simulation}\\
+        SolidWorks, OpenFOAM, ANSYS
+  \item \textbf{Tools}\\
+        Microsoft Office, \LaTeX
+  \item \textbf{Systems}\\
+        GNU/Linux, openWRT, BSD
+\end{cvitems}
 
 \cvsection{Languages}
+\begin{cvitems}
+  \item Mandarin Chinese: Native
+  \item English: Business Professional
+  \item Japanese: JLPT N2 (Business Level)
+\end{cvitems}
 
-\cvskill{Chinese (Native)}{5}
-\divider
-
-\cvskill{English (GRE 320)}{4.5}
-\divider
-
-\cvskill{Japanese (JLPT N2)}{4}
-
-\bigskip
-
-\cvsection{Hobbies}
-
-{\large\color{emphasis}
-\begin{itemize}
-\item \color{accent}{Classical Music}
-
-\color{emphasis}{Amateur Viola Player}
-
-\begin{center}
-   \includegraphics[width=0.6\linewidth]{2.jpg}
-\end{center}
-
-\item \color{accent}{PC DIY}
-
-\color{emphasis}{Server Administrator}
-
-\begin{center}
-   \includegraphics[width=0.6\linewidth]{3.jpg}
-\end{center}
-
-\item \color{accent}{Cats!}
-
-\begin{center}
-   \includegraphics[width=0.6\linewidth]{4.jpg}
-\end{center}
-
-\end{itemize}}
-
-\end{paracol}
+\cvsection{Interests}
+\begin{cvitems}
+  \item Classical Music: Amateur Violist
+  \item PC DIY: Server Administrator
+  \item Detective Novels
+\end{cvitems}
 
 \end{document}
