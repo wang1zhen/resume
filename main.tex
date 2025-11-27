@@ -7,6 +7,7 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{fontawesome5}
+\usepackage{multicol}
 
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -118,6 +119,7 @@
   {2011.9 -- 2014.8}
   {}
 
+\begin{multicols}{2}
 \cvsection{スキル}
 \begin{itemize}[itemsep=6pt,topsep=2pt]
   \item \textbf{プログラミング}\\
@@ -130,6 +132,7 @@
         GNU/Linux, openWRT, BSD
 \end{itemize}
 
+\columnbreak
 \cvsection{語学力}
 \begin{itemize}
   \item 中国語：母国語
@@ -143,5 +146,6 @@
   \item パソコンDIY：サーバー管理者
   \item 推理小説
 \end{itemize}
+\end{multicols}
 
 \end{document}
