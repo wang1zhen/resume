@@ -1,0 +1,72 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{resume}[2026/02/07 Shared resume style]
+
+\RequirePackage[margin=1.6cm]{geometry}
+\RequirePackage{xcolor}
+\RequirePackage{enumitem}
+\RequirePackage{hyperref}
+\RequirePackage{graphicx}
+\RequirePackage{fontawesome5}
+\RequirePackage{multicol}
+\RequirePackage{fontspec}
+
+\setmainfont{Noto Sans CJK JP}
+\setsansfont{Noto Serif CJK JP}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{DarkInk}{HTML}{3F3A38}
+\definecolor{SteelGrey}{HTML}{7A716B}
+\definecolor{AccentDeep}{HTML}{6F7E8C}
+\definecolor{AccentSoft}{HTML}{E7DFD4}
+\definecolor{CardBg}{HTML}{F4F1EC}
+
+\AtBeginDocument{\color{DarkInk}}
+
+\newcommand{\sectionrule}{\textcolor{SteelGrey!45}{\rule{\linewidth}{0.5pt}}}
+\newcommand{\cvsection}[1]{%
+  \vspace{6pt}%
+  \noindent\colorbox{AccentDeep}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textcolor{white}{\large\bfseries #1}}%
+  }\par\vspace{2pt}%
+  \vspace{2pt}%
+}
+\newcommand{\contactitem}[2]{\textcolor{SteelGrey}{#1}\,#2}
+\newcommand{\rolebadge}[1]{%
+  \colorbox{AccentSoft}{\textcolor{AccentDeep}{\small\bfseries\strut #1}}%
+}
+\newcommand{\furiname}[4]{%
+  \begin{tabular}[t]{@{}cc@{}}%
+    {\large #1} & {\large #2}\\[-1pt]%
+    {\Huge\bfseries #3} & {\Huge\bfseries #4}%
+  \end{tabular}%
+}
+\newenvironment{cvitems}{\begin{itemize}[leftmargin=*,itemsep=3pt,topsep=2pt]}{\end{itemize}}
+\newcommand{\eduentry}[5]{%
+  \vspace{7pt}%
+  \noindent\fcolorbox{SteelGrey!45}{CardBg}{%
+    \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+      \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l r}
+        \textbf{#1} & {\small\textcolor{AccentDeep}{\bfseries #4}}\\
+        {\small #2} & {\small\textcolor{SteelGrey}{#3}}\\
+      \end{tabular*}%
+      \if\relax\detokenize{#5}\relax
+        \vspace{2pt}%
+      \else
+        \vspace{-3pt}%
+        \begin{cvitems}
+          #5
+        \end{cvitems}
+      \fi
+    }%
+  }%
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlist[itemize]{leftmargin=*,itemsep=3pt,topsep=2pt,label=\textcolor{AccentDeep}{\small$\circ$}}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=AccentDeep,
+  urlcolor=AccentDeep
+}

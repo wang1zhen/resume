@@ -1,80 +1,19 @@
 \documentclass[10pt,a4paper]{article}
 
-\usepackage[margin=1.5cm]{geometry}
-\usepackage{iftex}
-\usepackage{xcolor}
-\usepackage{enumitem}
-\usepackage{hyperref}
-\usepackage{graphicx}
-\usepackage{fontawesome5}
-\usepackage{multicol}
-
-\ifPDFTeX
-  \usepackage[T1]{fontenc}
-  \usepackage[utf8]{inputenc}
-  \usepackage{lmodern}
-\else
-  \usepackage{fontspec}
-  \setmainfont{Noto Sans CJK JP}
-  \setsansfont{Noto Serif CJK JP}
-  \renewcommand{\familydefault}{\sfdefault}
-\fi
-
-\definecolor{DarkInk}{HTML}{1F2937}
-\definecolor{SteelGrey}{HTML}{4B5563}
-\definecolor{LineGrey}{HTML}{D1D5DB}
-
-\newcommand{\sectionrule}{\textcolor{LineGrey}{\rule{\linewidth}{0.6pt}}}
-\newcommand{\cvsection}[1]{%
-  \vspace{5pt}%
-  {\Large\scshape #1}\par\vspace{-2pt}%
-  \sectionrule\vspace{2pt}%
-}
-\newcommand{\contactitem}[2]{\textcolor{SteelGrey}{#1}\,#2}
-\newcommand{\furiname}[4]{%
-  \begin{tabular}[t]{@{}cc@{}}%
-    {\large #1} & {\large #2}\\[-1pt]%
-    {\Huge\bfseries #3} & {\Huge\bfseries #4}%
-  \end{tabular}%
-}
-\newenvironment{cvitems}{\begin{itemize}[leftmargin=*,itemsep=4pt,topsep=2pt]}{\end{itemize}}
-\newcommand{\eduentry}[5]{%
-  \vspace{8pt}%
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l r}
-    \textbf{#1} & #4\\
-    \textit{\small #2} & \textit{\small #3}\\
-  \end{tabular*}%
-  \if\relax\detokenize{#5}\relax
-    \vspace{4pt}%
-  \else
-    \vspace{-2pt}%
-    \begin{cvitems}
-      #5
-    \end{cvitems}
-  \fi
-}
-
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{4pt}
-\setlist[itemize]{leftmargin=*,itemsep=4pt,topsep=2pt,label={$\circ$}}
-
-\hypersetup{
-  colorlinks=true,
-  linkcolor=DarkInk,
-  urlcolor=DarkInk
-}
+\usepackage{resume}
 
 \begin{document}
 \thispagestyle{empty}
 
 \begin{minipage}[b]{0.72\linewidth}
+  \textcolor{AccentDeep}{\rule{\linewidth}{1.2pt}}\\[4pt]
   \furiname{オウ}{イシン}{王}{一臻}\\[4pt]
   {\normalsize WANG\;Yizhen}
 
-  \vspace{8pt}
+  \vspace{6pt}
+  \rolebadge{修士 | 東京大学 長谷川研究室 | 機械工学}\\[4pt]
   {\footnotesize
-    \textcolor{DarkInk}{\normalsize 東京大学 長谷川研究室 修士}\\[2pt]
-    \contactitem{\faEnvelope[regular]}{\href{mailto:wangyz@iis.u-tokyo.ac.jp}{wangyz@iis.u-tokyo.ac.jp}}\hspace{1em}
+    \contactitem{\faEnvelope[regular]}{\href{mailto:wang1zhen97@gmail.com}{wang1zhen97@gmail.com}}\hspace{1em}
     \contactitem{\faPhone}{080-8008-2338}\hspace{1em}
     \contactitem{\faMapMarker*}{日本・東京}\\[2pt]
     \contactitem{\faGlobe}{\href{https://blog.wang1zhen.com}{blog.wang1zhen.com}}\hspace{1em}
@@ -85,7 +24,7 @@
 \hfill
 \begin{minipage}[b]{0.22\linewidth}
   \raggedleft
-  \raisebox{6pt}{\includegraphics[width=3.2cm]{1.jpg}}
+  \raisebox{5pt}{\includegraphics[width=3.0cm]{1.jpg}}
 \end{minipage}
 
 \vspace{6pt}
