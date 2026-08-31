@@ -2,7 +2,7 @@ name: Build resume
 
 on:
   push:
-    branches: [main]
+    branches: [main, ci/build-resume]
     tags: ['v*']
     paths:
       - '**.tex'
