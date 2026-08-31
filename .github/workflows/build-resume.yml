@@ -22,10 +22,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Compile with XeLaTeX
-        uses: xu-cheng/latex-action@v3
+        uses: xu-cheng/latex-action@v4
         with:
           root_file: |
             main.tex
@@ -47,7 +47,7 @@ jobs:
           cp main.pdf    WANG-Yizhen-Resume-JA.pdf
           cp main_en.pdf WANG-Yizhen-Resume-EN.pdf
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: resume-pdf
           path: WANG-Yizhen-Resume-*.pdf
@@ -58,14 +58,14 @@ jobs:
       # at a stable URL.
       - name: Publish tagged release
         if: startsWith(github.ref, 'refs/tags/v')
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: WANG-Yizhen-Resume-*.pdf
           generate_release_notes: true
 
       - name: Refresh rolling release
         if: ${{ !startsWith(github.ref, 'refs/tags/v') }}
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           tag_name: latest
           name: Latest build
