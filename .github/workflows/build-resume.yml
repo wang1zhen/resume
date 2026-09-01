@@ -42,10 +42,14 @@ jobs:
             fi
             fc-cache -f
 
+      # The repo keeps resume_王_一臻_jp.pdf, but GitHub release assets are
+      # ASCII-only: non-ASCII characters in an asset name are replaced with
+      # dots, which produced an unusable "resume_._._jp.pdf". Publish under a
+      # romanised name instead.
       - name: Name the artifacts
         run: |
-          cp main.pdf    "resume_王_一臻_jp.pdf"
-          cp main_en.pdf "resume_WANG_Yizhen_en.pdf"
+          cp main.pdf    resume_WANG_Yizhen_jp.pdf
+          cp main_en.pdf resume_WANG_Yizhen_en.pdf
 
       - uses: actions/upload-artifact@v7
         with:
