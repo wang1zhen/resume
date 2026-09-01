@@ -14,11 +14,14 @@
 % its box and is silently clipped instead of wrapping.
 \RequirePackage{xeCJK}
 
-\setmainfont{Noto Sans CJK JP}
+% Serif body. The family is "Noto Serif CJK JP" — note that "Noto Sans Serif CJK"
+% is not a real family and silently falls back to Latin-only Noto Sans, which
+% breaks every CJK glyph. Both faces ship in Debian's fonts-noto-cjk, which is
+% what CI already installs, so no workflow change is needed.
+\setmainfont{Noto Serif CJK JP}
 \setsansfont{Noto Sans CJK JP}
-\setCJKmainfont{Noto Sans CJK JP}
+\setCJKmainfont{Noto Serif CJK JP}
 \setCJKsansfont{Noto Sans CJK JP}
-\renewcommand{\familydefault}{\sfdefault}
 
 % Cool, high-contrast neutrals with a single deep-navy accent. The previous
 % palette was warm and low-saturation (beige card, cream badge, dusty blue-grey
