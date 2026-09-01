@@ -6,7 +6,7 @@
 \thispagestyle{empty}
 \newgeometry{top=1.0cm,bottom=1.0cm,left=1.35cm,right=1.35cm}
 
-\begin{minipage}[b]{0.72\linewidth}
+\begin{minipage}[b]{\linewidth}
   \textcolor{AccentDeep}{\rule{\linewidth}{1.2pt}}\\[4pt]
   \furiname{オウ}{イシン}{王}{一臻}\\[4pt]
   {\normalsize WANG\;Yizhen}
@@ -22,13 +22,15 @@
     \contactitem{\faLinkedin}{\href{https://www.linkedin.com/in/yizhen-wang-3a7b68110/}{LinkedIn}}
   }
 \end{minipage}
-\hfill
-\begin{minipage}[b]{0.22\linewidth}
-  \raggedleft
-  \raisebox{5pt}{\includegraphics[width=2.8cm]{1.jpg}}
-\end{minipage}
 
-\vspace{6pt}
+\vspace{4pt}
+\cvsection{Profile}
+\begin{cvitems}
+  \item Commercial CFD and design optimization. Multiphysics for aerospace propulsion (fluid-structure coupled thermal, combustion coupling, supercritical fluids) on HPC clusters, plus topology and parametric optimization, across ANSYS Fluent, OpenFOAM and ToffeeX.
+  \item Master's thesis drove a turbulent pipe-flow rig by Bayesian optimization with no operator in the loop: 75\% drag reduction, 40\% power saving rate. JSAE Graduate Research Encouragement Award.
+  \item In Japan on a work visa. Japanese with clients, English for research, Chinese first language.
+\end{cvitems}
+
 \cvsection{Education}
 
 \eduentry
@@ -75,47 +77,32 @@
   {2020 -- 2023}
   {\item Taught students preparing for overseas university admission while reaching business-level Japanese and securing University of Tokyo admission}
 
-\vspace{6pt}
+\vspace{4pt}
 \setlength{\multicolsep}{0pt}
-\begin{multicols}{2}
 \cvsection{Skills}
+\begin{multicols}{2}
 \begin{cvitems}
-  \item \textbf{Mechanical Engineering}\\
-        Tools: SolidWorks, OpenFOAM, ANSYS\\
-        Coursework: Advanced Heat Transfer,\\
-        Numerical Thermofluid Engineering, \\
-        Advanced Fluid Engineering,\\
-        Numerical Methods
-  \item \textbf{Electrical Engineering}\\
-        Coursework: Circuit Theory, Visualization of \\
-        PLC Control, Measurement Principles and\\
-        Technologies, Instrumentation Concepts\\
-        and System/Control Modeling
-  \item \textbf{Machine Learning \& Optimization}\\
-        Methods/Coursework: Bayesian Optimization,\\
-        Brain-Inspired Information Processing \\
-        Mechanics, Neuro Intelligence
-  \item \textbf{Miscellaneous}\\
-        Programming: Python, MATLAB, C/C++,\\
-        Emacs Lisp\\
-        Tools: Microsoft Office, \LaTeX\\
-        Systems: GNU/Linux, openWRT, BSD
-\end{cvitems}
-
-\columnbreak
-\cvsection{Languages}
-\begin{cvitems}
-  \item Mandarin Chinese: Native
-  \item English: Native Level
-  \item Japanese: JLPT N1 (Business Level)
-\end{cvitems}
-
-\cvsection{Interests}
-\begin{cvitems}
-  \item Classical Music: Amateur Violist
-  \item PC DIY: Server Administrator
-  \item Detective Novels and Science Fiction
+  \item \textbf{CFD \& Multiphysics}\\
+        ANSYS Fluent, OpenFOAM, ToffeeX\\
+        Conjugate heat transfer, fluid-structure\\
+        interaction, combustion coupling,\\
+        supercritical fluids, turbulence modelling
+  \item \textbf{Optimization}\\
+        Topology, parametric and hybrid\\
+        optimization; Bayesian optimization with\\
+        Gaussian-process surrogates; design of\\
+        experiments
+  \item \textbf{Computing}\\
+        Python, C/C++, MATLAB\\
+        HPC clusters, Slurm, Git, GNU/Linux
+  \item \textbf{CAD \& Workflow}\\
+        SolidWorks, CATIA, SpaceClaim\\
+        Meshing, boundary conditions,\\
+        post-processing, validation, reporting
 \end{cvitems}
 \end{multicols}
+
+\vspace{3pt}
+\noindent{\footnotesize\textbf{Languages:}\; Mandarin Chinese (native)\quad English (native level)\quad Japanese JLPT N1 (business level)}
 
 \end{document}
