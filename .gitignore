@@ -1,3 +1,4 @@
 .auctex-auto
 LaTeX.aux
 *.synctex.gz
+.codex
