@@ -1,10 +1,10 @@
-\documentclass[10pt,a4paper]{article}
+\documentclass[9pt,a4paper]{extarticle}
 
 \usepackage{resume}
 
 \begin{document}
 \thispagestyle{empty}
-\newgeometry{top=1.1cm,bottom=1.1cm,left=1.6cm,right=1.6cm}
+\newgeometry{top=1.0cm,bottom=1.0cm,left=1.35cm,right=1.35cm}
 
 \begin{minipage}[b]{0.72\linewidth}
   \textcolor{AccentDeep}{\rule{\linewidth}{1.2pt}}\\[4pt]
@@ -37,14 +37,16 @@
   {Tokyo, Japan}
   {Oct 2023 -- Sep 2025}
   {\item Automatic Optimization of Pulsating Waveform for Drag Reduction in Experiment of Turbulent Pipe Flow
-   \item[] \textbf{Master's thesis received the Award of Society of Automotive Engineers of Japan (JSAE)}}
+   \item Built an unattended Bayesian-optimization loop over the rig, reaching \textbf{75\% maximum drag reduction} and a \textbf{40\% maximum power saving rate}
+   \item[] \textbf{Thesis received the JSAE Graduate Research Encouragement Award}}
 
 \eduentry
   {University of Melbourne}
   {Master, Mechanical Engineering (Withdrawn)}
   {Melbourne, Australia}
   {Jan 2019 -- Dec 2019}
-  {\item Investigation of energetic motions in rough-wall turbulent boundary layers}
+  {\item Investigation of energetic motions in rough-wall turbulent boundary layers
+   \item[] Withdrew on receiving a fully funded PhD offer from the same university; enrolment was deferred under COVID-19 travel and visa restrictions and the offer lapsed in late 2022 under university policy}
 
 \eduentry
   {Shanghai Jiao Tong University}
@@ -54,12 +56,6 @@
   {\item Dilution effects of DME and ethanol on methane flames
    \item Dynamic characteristics of hydrogen-cooled generator stator foundations}
 
-\eduentry
-  {Shanghai Experimental School}
-  {High School}
-  {Shanghai, China}
-  {Sep 2011 -- Aug 2014}
-  {}
 
 \cvsection{Work Experience}
 
@@ -68,10 +64,18 @@
   {CAE Analysis Engineer}
   {Kanagawa, Japan}
   {Apr 2026 -- Present}
-  {}
+  {\item Fluid-structure coupled thermal, combustion-coupled and supercritical-fluid analysis for aerospace propulsion, run in parallel on an HPC cluster
+   \item Delivered optimization PoCs: piping support placement (heat loss, thermal stress, seismic natural frequency) and coupled fluid-thermal-structural with topology optimization
+   \item Cross-validation across ANSYS Fluent / OpenFOAM / ToffeeX; built the internal OpenFOAM computing environment (Slurm)}
+
+\eduentry
+  {Independent Academic Tutor}
+  {AP / IB / A-Level Mathematics and Physics}
+  {Shanghai, China}
+  {2020 -- 2023}
+  {\item Taught students preparing for overseas university admission while reaching business-level Japanese and securing University of Tokyo admission}
 
 \vspace{6pt}
-\setlength{\columnsep}{2\dimexpr\columnsep\relax}
 \setlength{\multicolsep}{0pt}
 \begin{multicols}{2}
 \cvsection{Skills}

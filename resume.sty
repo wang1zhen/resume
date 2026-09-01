@@ -1,7 +1,7 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{resume}[2026/02/07 Shared resume style]
 
-\RequirePackage[margin=1.6cm]{geometry}
+\RequirePackage[margin=1.35cm]{geometry}
 \RequirePackage{xcolor}
 \RequirePackage{enumitem}
 \RequirePackage{hyperref}
@@ -9,9 +9,15 @@
 \RequirePackage{fontawesome5}
 \RequirePackage{multicol}
 \RequirePackage{fontspec}
+% xeCJK is required for Japanese line breaking. fontspec alone gives XeTeX no
+% break opportunities inside a CJK run, so a long Japanese sentence overflows
+% its box and is silently clipped instead of wrapping.
+\RequirePackage{xeCJK}
 
 \setmainfont{Noto Sans CJK JP}
 \setsansfont{Noto Sans CJK JP}
+\setCJKmainfont{Noto Sans CJK JP}
+\setCJKsansfont{Noto Sans CJK JP}
 \renewcommand{\familydefault}{\sfdefault}
 
 \definecolor{DarkInk}{HTML}{3F3A38}
@@ -24,11 +30,10 @@
 
 \newcommand{\sectionrule}{\textcolor{SteelGrey!45}{\rule{\linewidth}{0.5pt}}}
 \newcommand{\cvsection}[1]{%
-  \vspace{6pt}%
+  \vspace{3pt}%
   \noindent\colorbox{AccentDeep}{%
     \parbox{\dimexpr\linewidth-2\fboxsep\relax}{\textcolor{white}{\large\bfseries #1}}%
-  }\par\vspace{2pt}%
-  \vspace{2pt}%
+  }\par\vspace{1pt}%
 }
 \newcommand{\contactitem}[2]{\textcolor{SteelGrey}{#1}\,#2}
 \newcommand{\rolebadge}[1]{%
@@ -40,9 +45,9 @@
     {\Huge\bfseries #3} & {\Huge\bfseries #4}%
   \end{tabular}%
 }
-\newenvironment{cvitems}{\begin{itemize}[leftmargin=*,itemsep=3pt,topsep=2pt]}{\end{itemize}}
+\newenvironment{cvitems}{\begin{itemize}[leftmargin=*,itemsep=1.5pt,topsep=1pt]}{\end{itemize}}
 \newcommand{\eduentry}[5]{%
-  \vspace{7pt}%
+  \vspace{4pt}%
   \noindent\fcolorbox{SteelGrey!45}{CardBg}{%
     \parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
       \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} l r}
@@ -62,8 +67,8 @@
 }
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{3pt}
-\setlist[itemize]{leftmargin=*,itemsep=3pt,topsep=2pt,label=\textcolor{AccentDeep}{\small$\circ$}}
+\setlength{\parskip}{1.5pt}
+\setlist[itemize]{leftmargin=*,itemsep=1.5pt,topsep=1pt,label=\textcolor{AccentDeep}{\small$\circ$}}
 
 \hypersetup{
   colorlinks=true,
